@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetín Escolar</title>
+    <link rel="stylesheet" href="diseño.css">
+    <!-- Fuente moderna desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <h1>☕ Cafetín Escolar</h1>
+            <p class="tagline">¡Los mejores antojitos al mejor precio!</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#formulario-seccion">Realizar Pedido</a></li>
+                <li><a href="#resumen-pedido">Resumen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN DE INICIO -->
+        <section id="inicio" class="hero-section">
+            <div class="hero-content">
+                <h2>¡Bienvenido a nuestro Cafetín!</h2>
+                <p>Donde podrás encontrar productos sabrosos, frescos y de calidad a precios super justos.</p>
+            </div>
+            <div class="hero-image">
+                <img src="Gatito.jpeg" alt="Gatito Cafetín" class="img-gatito">
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PRODUCTOS -->
+        <section id="productos-seccion">
+            <h2 class="titulo-seccion"> Nuestros Deliciosos Productos</h2>
+
+            <div id="productos" class="contenedor-productos">
+
+                <article class="tarjeta-producto" data-codigo="P001" data-nombre="Pupusa" data-precio="0.75">
+                    <img src="pupusas.jpeg" alt="Pupusas">
+                    <h3>P001 Pupusa</h3>
+                    <p>Pupusas de calidad</p>
+                    <p class="precio">Precio: $0.75</p>
+                    <button class="btn-agregar" onclick="seleccionarProducto('P001')">Agregar al pedido</button>
+                </article>
+
+                <article class="tarjeta-producto" data-codigo="P002" data-nombre="Hamburguesa" data-precio="2.50">
+                    <img src="hamburguesa.jpeg" alt="Hamburguesa">
+                    <h3>P002 Hamburguesa</h3>
+                    <p>Hamburguesas de calidad</p>
+                    <p class="precio">Precio: $2.50</p>
+                    <button class="btn-agregar" onclick="seleccionarProducto('P002')">Agregar al pedido</button>
+                </article>
+
+                <article class="tarjeta-producto" data-codigo="P003" data-nombre="Pizza" data-precio="2.00">
+                    <img src="pizza.jpeg" alt="Pizza">
+                    <h3>P003 Pizza</h3>
+                    <p>Pizzas de calidad</p>
+                    <p class="precio">Precio: $2.00</p>
+                    <button class="btn-agregar" onclick="seleccionarProducto('P003')">Agregar al pedido</button>
+                </article>
+
+                <article class="tarjeta-producto" data-codigo="P004" data-nombre="Tacos" data-precio="1.50">
+                    <img src="tacos.jpeg" alt="Tacos">
+                    <h3>P004 Tacos</h3>
+                    <p>Tacos de calidad</p>
+                    <p class="precio">Precio: $1.50</p>
+                    <button class="btn-agregar" onclick="seleccionarProducto('P004')">Agregar al pedido</button>
+                </article>
+
+                <article class="tarjeta-producto" data-codigo="P005" data-nombre="Jugo" data-precio="1.00">
+                    <img src="jugo.jpeg" alt="Jugo">
+                    <h3>P005 Jugo</h3>
+                    <p>Jugos naturales de calidad</p>
+                    <p class="precio">Precio: $1.00</p>
+                    <button class="btn-agregar" onclick="seleccionarProducto('P005')">Agregar al pedido</button>
+                </article>
+
+                <article class="tarjeta-producto" data-codigo="P006" data-nombre="Agua" data-precio="0.75">
+                    <img src="agua.jpeg" alt="Agua">
+                    <h3>P006 Agua</h3>
+                    <p>Agua purificada de calidad</p>
+                    <p class="precio">Precio: $0.75</p>
+                    <button class="btn-agregar" onclick="seleccionarProducto('P006')">Agregar al pedido</button>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE FORMULARIO DE PEDIDO -->
+        <section id="formulario-seccion" class="cafeteria-container">
+            <div class="cafeteria-card">
+                <h2> Formulario de Pedido</h2>
+                <p class="horario"> Horario de atención: <strong>7:00 a.m. - 2:00 p.m.</strong></p>
+
+                <form id="formPedido">
+                    <div class="form-group">
+                        <label for="txtCliente">Nombre del estudiante:</label>
+                        <input type="text" id="txtCliente" placeholder="Ej. Juan Pérez" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="txtCodigo">Código:</label>
+                            <input type="text" id="txtCodigo" placeholder="Ej. EST-2024" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtSeccion">Sección / Grado:</label>
+                            <input type="text" id="txtSeccion" placeholder="Ej. 9no 'A'" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="selectProducto">Producto a comprar:</label>
+                            <select id="selectProducto" required>
+                                <option value="" disabled selected>-- Selecciona un producto --</option>
+                                <option value="P001">P001 - Pupusa ($0.75)</option>
+                                <option value="P002">P002 - Hamburguesa ($2.50)</option>
+                                <option value="P003">P003 - Pizza ($2.00)</option>
+                                <option value="P004">P004 - Tacos ($1.50)</option>
+                                <option value="P005">P005 - Jugo ($1.00)</option>
+                                <option value="P006">P006 - Agua ($0.75)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtCantidad">Cantidad de productos:</label>
+                            <input type="number" id="txtCantidad" min="1" value="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Método de pago:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="pago" value="Efectivo" checked> 💵 Efectivo</label>
+                            <label><input type="radio" name="pago" value="Tarjeta/QR"> 💳 Tarjeta / QR</label>
+                            <label><input type="radio" name="pago" value="Cuenta Escolar"> 🏫 Saldo Escolar</label>
+                        </div>
+                    </div>
+
+                    <div class="promocion-badge">
+                        <strong>¡Promoción!</strong> 10% de descuento automático en compras de 5 o más unidades.
+                    </div>
+
+                    <button type="submit" class="btn-realizar-pedido">🛒 Realizar Pedido</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- RESUMEN DEL PEDIDO -->
+        <section id="resumen-pedido" class="resumen-seccion">
+            <h2>📋 Resumen de tu Pedido</h2>
+
+            <div id="resumenPedido" class="resumen-box">
+                <p class="placeholder-text">Aún no has realizado ningún pedido. Llena el formulario o presiona "Agregar
+                    al pedido" en cualquier producto.</p>
+            </div>
+
+            <button type="button" class="btn-limpiar" id="btn-limpiar" onclick="limpiarPedido()">🧹 Limpiar
+                todo</button>
+        </section>
+
+    </main>
+
+    <section id="seccion-pedidos-txt" class="resumen-seccion">
+        <h2>📂 Registro de Pedidos (pedidos.txt)</h2>
+        <button type="button" class="btn-cargar" id="btn-cargar-txt">Cargar pedidos.txt</button>
+
+        <div id="contenedor-txt-view" class="resumen-box" style="margin-top: 15px;">
+            <p class="placeholder-text">Presiona el botón para leer los registros guardados.</p>
+        </div>
+    </section>
+
+    <!-- RETO ADICIONAL: RESUMEN DE VENTAS -->
+    <section id="resumen-ventas" class="resumen-seccion" style="background: #e0f2fe; border-color: #0284c7;">
+        <button type="button" class="btn-guardar-txt" id="btn-descargar-txt"
+            style="background: #0284c7; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 10px;">💾
+            Descargar pedidos.txt</button>
+        <h2 style="color: #0369a1;">📊 Resumen de Ventas</h2>
+        <div id="caja-resumen-ventas" class="ticket">
+            <div class="ticket-row"><strong>Pedidos registrados:</strong> <span id="lbl-total-pedidos">0</span></div>
+            <div class="ticket-row ticket-total"><strong>Ventas Totales:</strong> <span
+                    id="lbl-total-ventas">$0.00</span></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Cafetín Escolar - Sabores que alegran tu día 🍕🥤</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

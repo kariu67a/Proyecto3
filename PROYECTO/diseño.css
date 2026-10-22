@@ -1,0 +1,435 @@
+/* ===================================================
+   ESTILOS GENERALES Y FONDO COLORIDO DE LA CAFETERÍA
+   =================================================== */
+
+:root {
+    --primary-color: #3f35ff72;
+    --primary-hover: #1717a6;
+    --secondary-color: #8867c1;
+    --accent-color: #00a896;
+    --accent-yellow: #4763b0;
+    --text-dark: #2b2d42;
+    --bg-card: rgba(255, 255, 255, 0.95);
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    /* Fondo muy alegre, vibrante y colorido */
+    background: linear-gradient(135deg, #bce0ff 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+/* ===================================================
+   HEADER & NAVEGACIÓN
+   =================================================== */
+
+.header {
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 15px rgba(221, 36, 118, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.header .tagline {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* ===================================================
+   INICIO (HERO)
+   =================================================== */
+
+.hero-section {
+    max-width: 1100px;
+    margin: 30px auto;
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+    border: 4px solid var(--accent-yellow);
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    color: #d81159;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #4a4e69;
+}
+
+.hero-image .img-gatito {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================================
+   PRODUCTOS
+   =================================================== */
+
+.titulo-seccion {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #ff007f;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+    margin: 40px 0 20px;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.tarjeta-producto {
+    background: var(--bg-card);
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #ffb3c1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-color);
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.tarjeta-producto h3 {
+    font-size: 1.3rem;
+    color: #7209b7;
+    margin-bottom: 6px;
+}
+
+.tarjeta-producto p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.tarjeta-producto .precio {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #059669;
+    margin: 10px 0;
+}
+
+.btn-agregar {
+    background: linear-gradient(45deg, #ff6b35, #ff9f1c);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+}
+
+.btn-agregar:hover {
+    background: linear-gradient(45deg, #e85a24, #f88c00);
+    transform: scale(1.03);
+}
+
+/* ===================================================
+   CAFETERÍA (FORMULARIO DE PEDIDO)
+   =================================================== */
+
+.cafeteria-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.cafeteria-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: var(--shadow);
+    border: 3px solid var(--accent-color);
+}
+
+.cafeteria-card h2 {
+    color: #0077b6;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.cafeteria-card .horario {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: #fff;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+
+.radio-group label {
+    font-weight: normal;
+    background: #f0f4f8;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #cbd5e1;
+}
+
+.promocion-badge {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px dashed #f59e0b;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.btn-realizar-pedido {
+    width: 100%;
+    background: linear-gradient(45deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+.btn-realizar-pedido:hover {
+    background: linear-gradient(45deg, #059669, #047857);
+    transform: translateY(-2px);
+}
+
+/* ===================================================
+   RESUMEN DEL PEDIDO
+   =================================================== */
+
+.resumen-seccion {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.resumen-seccion h2 {
+    text-align: center;
+    color: #7209b7;
+    margin-bottom: 20px;
+}
+
+.resumen-box {
+    background: var(--bg-card);
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    border: 3px solid #ff477e;
+    min-height: 120px;
+}
+
+.placeholder-text {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
+
+/* Ticket generado */
+.ticket {
+    line-height: 1.8;
+}
+
+.ticket h3 {
+    color: #ff477e;
+    border-bottom: 2px dashed #ff477e;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.ticket-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+}
+
+.ticket-total {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #d97706;
+    border-top: 2px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.btn-limpiar {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    margin: 25px auto 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+}
+
+.btn-limpiar:hover {
+    background-color: #dc2626;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .contenedor-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .contenedor-productos {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
